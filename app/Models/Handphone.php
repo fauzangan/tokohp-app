@@ -13,7 +13,7 @@ class Handphone extends Model
     protected $guarded = ['id'];
 
     public function invoice() {
-        return $this->hasMany(Course::class);
+        return $this->hasMany(Course::class, 'id');
     }
 
     public function scopeFilter($query, array $filters){

@@ -12,7 +12,7 @@
             @csrf
             <input type="number" name="isApprove" value=1 hidden>
             <div class="mb-3">
-                <label for="persetujuan" class="form-label">Penyetujuan</label>
+                <label for="persetujuan" class="form-label">Karyawan yang Menyetujui</label>
                 <input type="text" class="form-control" id="persetujuan" name="persetujuan" value="{{ auth()->user()->nama_karyawan }}" readonly>
               </div>
             <div class="mb-3">

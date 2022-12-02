@@ -35,7 +35,6 @@
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#detail{{ $invoice->id }}" class="btn btn-warning">Detail</a>
                                 <a href="/dashboard/invoices/restore/{{ $invoice->id }}" class="mx-1 btn btn-success">Restore</a>
                                 <form action="/dashboard/invoices/delete/{{ $invoice->id }}" method="POST" class="d-inline">
-                                    @method('delete')
                                     @csrf
                                     <button class="btn btn-danger" onclick="return confirm('Apakah kamu yakin?')">Delete</button>
                                 </form>

@@ -3,23 +3,21 @@
 <div id="layoutSidenav_content">
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Faktur List</h1>
+        <h1 class="mt-4">Catatan Faktur</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active">Dashboard</li>
         </ol>
 
         <div class="table-responsive col-lg-12">
-            <a href="/dashboard/invoices/recycle" class="btn btn-danger mb-3"><i class="fas fa-trash"></i> Deleted Faktur</a>
             <div class="card mb-4">
-                <div class="card-header">All Faktur</div>
+                <div class="card-header">Catatan Faktur</div>
                 <div class="card-body">
                     <table class="table table-bordered table-sm" id="invoice-table">
                         <thead>
                             <tr>
                             <th scope="col"># </th>
                             <th scope="col">No. Invoice</th>
-                            <th scope="col">Nama Pembeli</th>
-                            <th scope="col">No Hp Pembeli</th>
+                            <th scope="col">Disetujui Oleh</th>
                             <th scope="col">Tanggal Pembelian</th>
                             <th scope="col" class="text-center">Aksi</th>
                             </tr>
@@ -29,20 +27,14 @@
                             <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $faktur->id }}</td>
-                            <td>{{ $faktur->nama_pembeli }}</td>
-                            <td>{{ $faktur->nohp_pembeli }}</td>
+                            <td>{{ $faktur->persetujuan }}</td>
                             <td>{{ $faktur->created_at->toDateString() }}</td>
                             <td class="d-flex justify-content-center">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#detail{{ $faktur->id }}" class="btn btn-warning mx-1">Detail</a>
-                                <form action="/dashboard/invoices/{{ $faktur->id }}" method="POST" class="d-inline">
-                                @method('delete')
-                                @csrf
-                                <button class="btn btn-danger" onclick="return confirm('Apakah kamu yakin?')">Delete</button>
-                                </form>
                             </td>
                             </tr>
                             {{-- Modal --}}
-                            {{-- @include('dashboard.faktur.modal') --}}
+                            @include('dashboard.faktur.modal')
                             @endforeach
                         </tbody>
                         </table>

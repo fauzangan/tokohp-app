@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->String('nama_karyawan');
             $table->String('alamat_karyawan');
-            $table->String('nohp_karyawan');
+            $table->String('nohp_karyawan')->unique();
             $table->String('password');
             $table->timestamps();
         });

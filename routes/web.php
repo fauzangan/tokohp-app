@@ -36,6 +36,9 @@ Route::post('/product/search',[FrontpageController::class,'showProduct'])->name(
 Route::resource('/dashboard/handphones', DashboardHandphoneController::class);
 Route::resource('/dashboard/invoices', DashboardInvoiceController::class);
 Route::post('/product', [FrontpageController::class, 'beliProduk']);
+Route::get('/dashboard/fakturs/recycle', [DashboardFakturController::class, 'recycle']);
+Route::post('/dashboard/fakturs/delete/{faktur}', [DashboardFakturController::class, 'delete']);
+Route::get('/dashboard/fakturs/restore/{faktur}', [DashboardFakturController::class, 'restore']);
 Route::resource('/dashboard/fakturs', DashboardFakturController::class);
 
 

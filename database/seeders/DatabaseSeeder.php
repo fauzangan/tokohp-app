@@ -28,16 +28,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\Karyawan::create([
-            'nama_karyawan' => 'Oddy',
+            'nama_karyawan' => 'Oddy Ramadhan',
             'alamat_karyawan' => 'Tembalang',
             'nohp_karyawan' => '12345',
             'password' => bcrypt('12345')
         ]);
 
         \App\Models\Karyawan::create([
-            'nama_karyawan' => 'Fauzan',
+            'nama_karyawan' => 'Fauzan Z',
             'alamat_karyawan' => 'Tembalang',
-            'nohp_karyawan' => '12345',
+            'nohp_karyawan' => '123456',
             'password' => bcrypt('12345')
         ]);
 
@@ -154,7 +154,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\Invoice::create([
-            'nama_pembeli' => 'Tempik',
+            'persetujuan' => 'Oddy Ramadhan',
+            'nama_pembeli' => 'Ahmad',
             'nohp_pembeli' => '081291203344',
             'merk_hp' => 'Apple',
             'tipe_hp' => 'A53',
@@ -165,6 +166,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\Handphone::factory()->count(16)->create();
 
         \App\Models\Invoice::create([
+            'persetujuan' => 'Oddy Ramadhan',
             'nama_pembeli' => 'Sukro',
             'nohp_pembeli' => '081291203344',
             'merk_hp' => 'Samsung',
