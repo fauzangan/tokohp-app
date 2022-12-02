@@ -18,4 +18,7 @@ class Invoice extends Model
     public function karyawan(){
         return $this->belongsTo(Karyawan::class, 'id_karyawan');
     }
+    public function toko(){
+        return $this->belongsTo(Toko::class, 'id_toko');
+    }
 }

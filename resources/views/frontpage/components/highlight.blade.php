@@ -11,7 +11,6 @@
                 <button class="btn btn-primary" id="musik_kematian" onClick="playPause()" style="border-radius: 12px">
                     <audio
                       src="/music/selamat.mp3"
-                      loop
                     ></audio>
                     Beli Sekarang!
                   </button>

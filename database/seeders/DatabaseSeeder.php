@@ -153,6 +153,15 @@ class DatabaseSeeder extends Seeder
             'harga' => '24.000.000'
         ]);
 
+        \App\Models\Invoice::create([
+            'nama_pembeli' => 'Tempik',
+            'nohp_pembeli' => '081291203344',
+            'merk_hp' => 'Apple',
+            'tipe_hp' => 'A53',
+            'harga' => '20.000.000',
+            'isApprove' => '1'
+        ]);
+
         // \App\Models\Handphone::factory()->count(16)->create();
 
         \App\Models\Invoice::create([

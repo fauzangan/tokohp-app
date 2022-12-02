@@ -12,7 +12,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-credit-card"></i></div>
                     Invoice
                 </a>
-                <a class="nav-link {{ Request::is('dashboard/fakturs*')? 'active' : '' }}" href="#">
+                <a class="nav-link {{ Request::is('dashboard/fakturs*')? 'active' : '' }}" href="/dashboard/fakturs">
                     <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
                     Faktur
                 </a>

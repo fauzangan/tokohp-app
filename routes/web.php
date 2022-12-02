@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardFakturController;
 use App\Http\Controllers\DashboardHandphoneController;
 use App\Http\Controllers\DashboardInvoiceController;
 use App\Http\Controllers\FrontpageController;
@@ -35,4 +36,6 @@ Route::post('/product/search',[FrontpageController::class,'showProduct'])->name(
 Route::resource('/dashboard/handphones', DashboardHandphoneController::class);
 Route::resource('/dashboard/invoices', DashboardInvoiceController::class);
 Route::post('/product', [FrontpageController::class, 'beliProduk']);
+Route::resource('/dashboard/fakturs', DashboardFakturController::class);
+
 

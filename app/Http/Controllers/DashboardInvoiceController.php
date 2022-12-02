@@ -15,7 +15,7 @@ class DashboardInvoiceController extends Controller
     public function index()
     {
         return view('dashboard.invoice.index',[
-            'invoices' => Invoice::all()
+            'invoices' => Invoice::where('isApprove', 0)->get()
         ]);
     }
 
@@ -80,7 +80,18 @@ class DashboardInvoiceController extends Controller
      */
     public function update(Request $request, Invoice $invoice)
     {
-        //
+        $validatedData = $request->validate([
+            'persetujuan' => ['required'],
+            'merk_hp' => ['required','max:255'],
+            'tipe_hp' => ['required','max:255'],
+            'nama_pembeli' => ['required', 'max:255'],
+            'nohp_pembeli' => ['required', 'max:255'],
+            'harga' => ['required'],
+            'isApprove' => ['required']
+        ]);
+
+        Invoice::where('id', $invoice->id)->update($validatedData);
+        return redirect('/dashboard/invoices');
     }
 
     /**
@@ -97,17 +108,17 @@ class DashboardInvoiceController extends Controller
 
     public function recycle(){
         return view('dashboard.invoice.recycle', [
-            'invoices' => Invoice::onlyTrashed()->get()
+            'invoices' => Invoice::onlyTrashed()->where('isApprove', 0)->get()
         ]);
     }
 
     public function restore($invoiceId){
-        Invoice::onlyTrashed()->find($invoiceId)->restore();
+        Invoice::onlyTrashed()->where('isApprove', 0)->find($invoiceId)->restore();
         return redirect('/dashboard/invoices/recycle');
     }
 
     public function delete($invoiceId){
-        Invoice::onlyTrashed()->find($invoiceId)->forceDelete();
+        Invoice::onlyTrashed()->where('isApprove', 0)->find($invoiceId)->forceDelete();
         return redirect('/dashboard/invoices/recycle');
     }
 }

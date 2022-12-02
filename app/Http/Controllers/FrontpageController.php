@@ -51,4 +51,8 @@ class FrontpageController extends Controller
         Invoice::create($validatedData);
         return redirect('/');
     }
+
+    public function about(){
+        return view('frontpage.pages.about');
+    }
 }

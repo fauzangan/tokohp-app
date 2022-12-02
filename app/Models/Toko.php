@@ -10,4 +10,8 @@ class Toko extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function invoice() {
+        return $this->hasMany(Invoice::class);
+    }
 }
